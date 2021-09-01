@@ -1,0 +1,209 @@
+.singUpFormContainer {
+  border-radius: 100px 0px 0px 100px;
+  background-color: #f8f9fa;
+  margin-top: 50px;
+  height: 64vh;
+  width: 900px;
+  margin-right: 1%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.userNamePasswordInputContainer,
+.NamesInputContainer,
+.emailPhoneInputContainer {
+  display: flex;
+  align-items: center;
+}
+.input {
+  padding: 10px;
+  height: 22px;
+  width: 300px;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 2px;
+}
+.singUpFormContainer > h1 {
+  color: #495057;
+  margin-top: 20px;
+}
+.signUpLoginButton {
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  height: 40px;
+  background-color: #0062cc;
+  margin-top: 40px;
+  margin-left: 690px;
+}
+.NamesInputContainer {
+  margin-top: 20px;
+}
+.signUp {
+  height: 90vh;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeSection {
+  height: 50vh;
+  width: 200px;
+  margin-top: 200px;
+}
+.welcomeSection {
+  color: white;
+}
+.welcomeSection > h1 {
+  text-align: center;
+}
+.welcomeSection > p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.singUpFirstNameInput,
+.lastNameUserNameInput,
+.singUpEmailInput {
+  margin-right: 40px;
+}
+.errorHiddenDiv {
+  margin-top: 25px;
+}
+.signUpLoginButton:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.errorM {
+  margin-top: 7px;
+}
+
+.loginBtn {
+  border-radius: 20px;
+  border: none;
+  background-color: #f8f9fa;
+  margin-top: 30px;
+  height: 40px;
+  width: 150px;
+  margin-left: 20px;
+}
+.loginBtn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+@media (max-width: 950px) {
+  .userNamePasswordInputContainer,
+  .NamesInputContainer,
+  .emailPhoneInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .singUpFormContainer {
+    width: 550px;
+    height: 90vh;
+  }
+
+  .signUp {
+    height: 110vh;
+  }
+  .singUpFirstNameInput,
+  .lastNameUserNameInput,
+  .singUpEmailInput {
+    margin-right: 0px;
+  }
+  .signUpLoginButton {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    height: 40px;
+    background-color: #0062cc;
+    margin-top: 40px;
+    margin-left: 350px;
+  }
+}
+@media (max-width: 730px) {
+  .signUp {
+    height: 120vh;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .welcomeSection {
+    height: 20vh;
+    width: 200px;
+    margin-top: 0px;
+  }
+  .loginBtn {
+    margin-top: 20px;
+  }
+  .singUpFormContainer {
+    height: 90vh;
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .signUp {
+    height: 120vh;
+  }
+  .welcomeSection {
+    height: 20vh;
+    width: 200px;
+    margin-top: 0px;
+  }
+
+  .singUpFormContainer {
+    width: 400px;
+    height: 90vh;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .signUpLoginButton {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    height: 40px;
+    background-color: #0062cc;
+    margin-top: 40px;
+    margin-left: 230px;
+  }
+}
+
+@media (max-width: 400px) {
+  .signUp {
+    height: 110vh;
+  }
+  .welcomeSection {
+    height: 15vh;
+    width: 200px;
+    margin-top: 0px;
+  }
+
+  .singUpFormContainer {
+    width: 280px;
+    height: 90vh;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .signUpLoginButton {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 120px;
+  }
+  .input {
+    padding: 10px;
+    height: 22px;
+    width: 200px;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 2px;
+  }
+}

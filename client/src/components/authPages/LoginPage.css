@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.passwordLabel {
+  position: relative;
+  left: -95px;
+}
+.emailLabel {
+  margin-top: 20px;
+  position: relative;
+  left: -108px;
+}
+.LoginPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100%;
+}
+.formContainer {
+  border-radius: 20px;
+  margin-top: 90px;
+  color: rgb(0, 0, 0);
+  background-color: #f8f9fa;
+  height: 70vh;
+  width: 300px;
+}
+label {
+  color: black;
+}
+.itemsContainer {
+  color: black;
+  display: inline-block;
+  height: 60vh;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fa-user {
+  font-size: 40px;
+}
+.loginIcon {
+  top: 180px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+  background-color: rgb(255, 50, 50);
+}
+.loginText {
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.loginFailedMessage {
+  color: black;
+  margin-top: 70px;
+}
+::placeholder {
+  font-size: 1rem;
+}
+.userNameInput,
+.passwordInput {
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+  border: none;
+  position: relative;
+  outline: none;
+  border-bottom: 1px solid rgb(129, 129, 129);
+}
+.passwordErrorMessage,
+.usernameErrorMessage {
+  color: red;
+  font-size: 0.7rem;
+}
+input:focus {
+  border-bottom: 1px solid rgb(0, 204, 255);
+}
+
+.loginButton {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #f83822;
+  border-radius: 20px;
+  width: 250px;
+  height: 40px;
+}
+
+.loginButton:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #f9b800;
+}
+
+.signUpPageLink,
+.forgottenPasswordLink {
+  font-size: 0.9rem;
+  position: relative;
+  left: -50px;
+  text-decoration: none;
+  color: rgb(129, 129, 129);
+}
+.signUpPageLink:hover,
+.forgottenPasswordLink:hover {
+  color: #db9c46;
+}
+
+.signUpPageDiv,
+.forgottenPasswordDiv {
+  margin-bottom: 10px;
+}
+.forgottenPasswordLink {
+  position: relative;
+  left: -59px;
+}
+.emptyDivError {
+  height: 15px;
+}
+.usernameErrorMessage,
+.passwordErrorMessage {
+  height: 20px;
+}
+@media (max-width: 400px) {
+  .itemsContainer {
+    height: 50vh;
+  }
+  .formContainer {
+    margin-top: 00px;
+    height: 60vh;
+    width: 200px;
+  }
+  .loginText {
+    font-size: 1.1rem;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .emailLabel {
+    margin-top: 10px;
+    position: relative;
+    left: -70px;
+  }
+  .userNameInput,
+  .passwordInput {
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 180px;
+  }
+  .passwordLabel {
+    position: relative;
+    left: -60px;
+  }
+  .loginButton {
+    margin-top: 10px;
+
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+    width: 180px;
+    height: 30px;
+  }
+  .signUpPageLink,
+  .forgottenPasswordLink {
+    font-size: 0.9rem;
+    position: relative;
+    left: -23px;
+    text-decoration: none;
+    color: rgb(129, 129, 129);
+  }
+  .forgottenPasswordLink {
+    position: relative;
+    left: -30px;
+  }
+  .loginIcon {
+    top: 24vh;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    background-color: rgb(255, 50, 50);
+  }
+}

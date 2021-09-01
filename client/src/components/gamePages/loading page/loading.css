@@ -1,0 +1,7 @@
+.gifContainer {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

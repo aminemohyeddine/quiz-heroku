@@ -1,0 +1,20 @@
+.mustLoginContainer {
+  width: 100%;
+  display: flex;
+  height: 90vh;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.mustLoginItems {
+  width: 100%;
+  margin: 30px 0px 0px 30px;
+}
+
+.mustLoginItems > h4 {
+  color: red;
+}
+
+.mustLogin:hover,
+.registerrText:hover {
+  color: white;
+}

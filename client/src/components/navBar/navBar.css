@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.userBellowDiv {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  right: 20px;
+  position: absolute;
+  background-color: white;
+  color: black;
+  top: 10vh;
+  width: 148px;
+}
+.userBellowDiv {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.bellowItem {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.bellowItem:hover {
+  color: white;
+}
+
+.arrow {
+  color: white;
+}
+.navBar {
+  color: white;
+  height: 10vh;
+  background-color: #24252a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBarInfos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 20px;
+}
+.navBarInfos > div:not(:last-child) {
+  text-decoration: none;
+  color: inherit;
+  border: solid 1px #24252a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  height: 3vh;
+  padding: 10px;
+}
+.navInfo {
+  text-decoration: none;
+  color: inherit;
+  border: solid 1px #24252a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  height: 3vh;
+  padding: 10px;
+}
+.navInfo:hover {
+  text-decoration: none;
+  color: inherit;
+  border: solid 1px white;
+  cursor: pointer;
+}
+.about {
+  margin-right: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95px;
+  color: #24252a;
+  background-color: cyan;
+  height: 6vh;
+}
+.about:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .navInfo,
+  .about {
+    font-size: 0.8rem;
+  }
+  .about {
+    width: 70px;
+  }
+}
+
+.menuBtn {
+  cursor: pointer;
+  margin-right: 20px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgb(129, 126, 126);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger {
+  width: 30px;
+  height: 4px;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+}
+
+.menu-btn_burger::before,
+.menu-btn_burger::after {
+  content: "";
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger::before {
+  transform: translateY(-10px);
+}
+.menu-btn_burger::after {
+  transform: translateY(10px);
+}
+.menuBtnOpen {
+  margin-right: 20px;
+}
+.menuBtnOpen .menu-btn_burger {
+  transform: translateX(-0px);
+  background: transparent;
+  box-shadow: none;
+}
+.menuBtnOpen .menu-btn_burger::before {
+  transform: rotate(45deg) translate(-10px, 20px);
+}
+.menuBtnOpen .menu-btn_burger::after {
+  transform: rotate(-45deg) translate(-20px, -10px);
+}

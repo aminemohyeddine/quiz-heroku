@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.profilePageContainer {
+  height: 130vh;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.welcomeMessage {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  text-align: center;
+}
+.dataItem {
+  padding-bottom: 10px;
+}
+.dataContainer {
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.buttonsContainer {
+  display: flex;
+  border-bottom: 1px black solid;
+}
+
+.categoriesButton {
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 50%;
+}
+.categoriesButton:hover {
+  cursor: pointer;
+  background-color: #ff99cc;
+}
+
+.mostPlayedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 50%;
+}
+.mostPlayedButton:hover {
+  cursor: pointer;
+  background-color: #ff99cc;
+}
+
+.dataButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  width: 65%;
+  height: 40vh;
+  font-size: 1.3rem;
+}
+.mostPlayedCategoryName,
+.neverPlayedCategoryName {
+  color: red;
+}
+.dataMessage {
+  text-align: center;
+}
+
+.dataNewsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.news {
+  margin-right: 40px;
+  height: 100vh;
+  border: 1px solid rgb(255, 51, 255);
+  width: 20%;
+}
+.imageContainer {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentContainer {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categoriesMostPlayedContainer {
+  border: 1px solid black;
+  height: 500px;
+  width: 100%;
+}
+.active {
+  background-color: #ff99cc;
+}
+
+@media (max-width: 800px) {
+  .news {
+    display: none;
+    height: 20px;
+    width: 20px;
+  }
+  .dataNewsContainer {
+    flex-direction: column;
+  }
+  .dataButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 80%;
+    height: 40vh;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contentContainer {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageContainer {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dataItem {
+    font-size: 1rem;
+  }
+}
