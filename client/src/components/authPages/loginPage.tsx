@@ -52,6 +52,9 @@ export const LoginPage: React.FC<Props> = ({
       setIsAuthenticated(true);
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("adminAuth", "false");
+      localStorage.setItem("name", user.data.firstName);
+
+      console.log(user.data.firstName);
 
       setName(user.data.firstName);
       console.log(localStorage.getItem("isAuthenticated"));
@@ -64,6 +67,8 @@ export const LoginPage: React.FC<Props> = ({
       if (user.data.login) {
         localStorage.setItem("adminAuth", "true");
         localStorage.setItem("isAuthenticated", "false");
+        localStorage.setItem("name", user.data.firstName);
+        console.log(user.data.firstName);
 
         localStorage.setItem("userToken", JSON.stringify(user.data.token));
         setAdminIsAuthenticated(true);
