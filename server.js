@@ -43,6 +43,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(3001, () => {
+app.listen((port = 3001 || process.env.LISTEN_PORT), () => {
   console.log("server started at port 3001");
 });
