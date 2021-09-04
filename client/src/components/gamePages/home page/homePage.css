@@ -1,12 +1,31 @@
 .homePageContainer {
   height: 180vh;
 }
+.fillImageOne {
+  position: absolute;
+  left: -0%;
+  z-index: -1;
+  height: 49%;
+  width: 40%;
+}
+.fillImageTwo {
+  position: absolute;
+  left: 40%;
+  z-index: -1;
+  height: 49%;
+  width: 40%;
+}
+.fillImageThree {
+  position: absolute;
+  left: 70%;
+  z-index: -1;
+  height: 49%;
+  width: 40%;
+}
 .headerContainer {
   display: flex;
   justify-content: center;
   height: 46vh;
-  background-color: black;
-  background-image: url("../../../images/fill.PNG");
 }
 .headerTextContainer {
   display: flex;
@@ -108,7 +127,6 @@
     display: flex;
     justify-content: center;
     height: 40vh;
-    background-color: black;
   }
 }
 @media (max-width: 730px) {
@@ -130,7 +148,6 @@
   .headerContainer {
     display: flex;
     justify-content: center;
-    background-color: black;
   }
 }
 
@@ -153,7 +170,6 @@
   .headerContainer {
     display: flex;
     justify-content: center;
-    background-color: black;
   }
 }
 

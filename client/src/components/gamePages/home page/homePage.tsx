@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./homePage.css";
 import { Link } from "react-router-dom";
 import { CategoriesHomePage } from "./categoriesHomePage";
+import fillYourMindImage from "../../../images/fill_imassge.png";
 
 interface Props {
   setUserInfoToFalse: () => void;
@@ -29,6 +30,10 @@ export const HomePage: React.FC<Props> = ({
     >
       <div className="headerContainer">
         <div className="headerTextContainer">
+          <img className="fillImageOne" src={fillYourMindImage} alt="image" />
+          <img className="fillImageTwo" src={fillYourMindImage} alt="image" />
+          <img className="fillImageThree" src={fillYourMindImage} alt="image" />
+
           <div className="headerBigText">welcome to fill your mind</div>
           <div className="headerSmallText">
             your guide to learn easily in more than +100 category
