@@ -4,9 +4,9 @@
 .headerContainer {
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 46vh;
   background-color: black;
-  background: linear-gradient(to right, #ff333d 0%, #d91ceb 100%);
+  background-image: url("../../../images/fill.PNG");
 }
 .headerTextContainer {
   display: flex;
@@ -17,12 +17,14 @@
   align-items: center;
 }
 .headerBigText {
-  color: white;
+  background-color: white;
+  color: rgb(0, 0, 0);
   font-size: 2.5rem;
   margin-bottom: 30px;
 }
 .headerSmallText {
-  color: white;
+  background-color: white;
+  color: rgb(0, 0, 0);
   font-size: 2rem;
   margin-bottom: 30px;
 }
@@ -95,12 +97,10 @@
 
 @media (max-width: 900px) {
   .headerBigText {
-    color: white;
     font-size: 2rem;
     margin-bottom: 30px;
   }
   .headerSmallText {
-    color: white;
     font-size: 1.6rem;
     margin-bottom: 30px;
   }
@@ -109,17 +109,14 @@
     justify-content: center;
     height: 40vh;
     background-color: black;
-    background: linear-gradient(to right, #ff333d 0%, #d91ceb 100%);
   }
 }
 @media (max-width: 730px) {
   .headerBigText {
-    color: white;
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
   .headerSmallText {
-    color: white;
     font-size: 1.3rem;
     margin-bottom: 30px;
   }
@@ -134,18 +131,15 @@
     display: flex;
     justify-content: center;
     background-color: black;
-    background: linear-gradient(to right, #ff333d 0%, #d91ceb 100%);
   }
 }
 
 @media (max-width: 600px) {
   .headerBigText {
-    color: white;
     font-size: 1.6rem;
     margin-bottom: 30px;
   }
   .headerSmallText {
-    color: white;
     font-size: 1rem;
     margin-bottom: 30px;
   }
@@ -160,18 +154,15 @@
     display: flex;
     justify-content: center;
     background-color: black;
-    background: linear-gradient(to right, #ff333d 0%, #d91ceb 100%);
   }
 }
 
 @media (max-width: 500px) {
   .headerBigText {
-    color: white;
     font-size: 1.3rem;
     margin-bottom: 30px;
   }
   .headerSmallText {
-    color: white;
     font-size: 0.8rem;
     margin-bottom: 30px;
   }
