@@ -33,6 +33,7 @@ label {
   color: black;
 }
 .itemsContainer {
+  position: relative;
   color: black;
   display: inline-block;
   height: 60vh;
@@ -45,7 +46,7 @@ label {
   font-size: 40px;
 }
 .loginIcon {
-  top: 180px;
+  top: -30px;
   position: absolute;
   border-radius: 50%;
   display: flex;
@@ -182,7 +183,6 @@ input:focus {
     left: -30px;
   }
   .loginIcon {
-    top: 24vh;
     position: absolute;
     border-radius: 50%;
     display: flex;

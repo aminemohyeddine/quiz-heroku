@@ -119,7 +119,7 @@ export const LoginPage: React.FC<Props> = ({
                 <div className="itemsContainer">
                   <div className="loginFailedMessage">{message}</div>
                   <div className="loginIcon">
-                    <i className="far fa-user"></i>
+                    <i className="far fa-user userIcon"></i>
                   </div>
 
                   <div className="loginText">Login here</div>
