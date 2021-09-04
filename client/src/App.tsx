@@ -83,6 +83,7 @@ function App() {
     setAdminIsAuthenticated(false);
     localStorage.setItem("isAuthenticated", "false");
     localStorage.setItem("adminAuth", "false");
+    localStorage.setItem("name", "");
   };
 
   const getAuthFromLocalS = () => {
