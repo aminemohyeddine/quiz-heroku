@@ -42,7 +42,7 @@ export const LoginPage: React.FC<Props> = ({
     checkIfUserOrAdminIsAuth();
   }, []);
   const authentificationHandler = async (email: string, password: string) => {
-    const user = await axios.post("http://localhost:3001/user/login", {
+    const user = await axios.post("http://41.251.39.168:3001/user/login", {
       email: email,
       password: password,
     });
@@ -61,10 +61,13 @@ export const LoginPage: React.FC<Props> = ({
       console.log(localStorage.getItem("isAuthenticated"));
       history.push("/profile");
     } else if (!user.data.login) {
-      const user: any = await axios.post("http://localhost:3001/admin/login", {
-        email: email,
-        password: password,
-      });
+      const user: any = await axios.post(
+        "http://41.251.39.168:3001/admin/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
       if (user.data.login) {
         localStorage.setItem("adminAuth", "true");
         localStorage.setItem("isAuthenticated", "false");
