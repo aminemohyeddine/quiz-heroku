@@ -6,6 +6,10 @@ const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken");
 require("dotenv").config();
 
+router.get("/registerrr", async (req, res) => {
+  res.send("hello");
+});
+
 router.post("/register", async (req, res) => {
   //validate data
   const { error } = registerValidation(req.body);

@@ -42,7 +42,8 @@ export const LoginPage: React.FC<Props> = ({
     checkIfUserOrAdminIsAuth();
   }, []);
   const authentificationHandler = async (email: string, password: string) => {
-    const user = await axios.post("http://41.251.39.168:3001/user/login", {
+    ///user/registerrr
+    const user = await axios.post("http://196.217.181.170:3005/user/login", {
       email: email,
       password: password,
     });
@@ -62,7 +63,7 @@ export const LoginPage: React.FC<Props> = ({
       history.push("/profile");
     } else if (!user.data.login) {
       const user: any = await axios.post(
-        "http://41.251.39.168:3001/admin/login",
+        "http://196.217.181.170:3005/admin/login",
         {
           email: email,
           password: password,
