@@ -5,6 +5,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const questionsRouter = require("./routes/questions");
 const path = require("path");
+var redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
+
 //import Routes
 const authRoute = require("./routes/Auth");
 const postRoute = require("./routes/posts");
@@ -33,6 +35,7 @@ app.use("/posts", postRoute);
 app.use("/dev", devRoute);
 app.use("/gamedata", gameHandlerRoute);
 app.use("/", adminAuthRoute);
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 
 //serve static assets if in production
 if (process.env.NODE_ENV === "production") {
