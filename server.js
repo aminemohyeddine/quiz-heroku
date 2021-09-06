@@ -7,7 +7,7 @@ const questionsRouter = require("./routes/questions");
 const path = require("path");
 const fs = require("fs");
 const https = require("https");
-
+var http = require("http");
 //import Routes
 const authRoute = require("./routes/Auth");
 const postRoute = require("./routes/posts");
@@ -45,8 +45,23 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-port = process.env.PORT || 3005;
+//ssl configuration
+//ssl configuration
+const sslServer = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
+  },
+  app
+);
+//
+portHTTPS = process.env.PORT || 3005;
+portHTTP = process.env.PORT || 3004;
 
-app.listen(port, () => {
-  console.log("server started at port " + port);
+app.listen(portHTTP, () => {
+  console.log("server started at port " + portHTTP);
+});
+
+sslServer.listen(portHTTPS, () => {
+  console.log("server started at port " + portHTTPS);
 });
