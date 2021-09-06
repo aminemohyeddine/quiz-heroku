@@ -7,6 +7,7 @@ const questionsRouter = require("./routes/questions");
 const path = require("path");
 var http = require("http");
 var https = require("https");
+var fs = require("fs");
 
 //import Routes
 const authRoute = require("./routes/Auth");
@@ -38,7 +39,14 @@ app.use("/dev", devRoute);
 app.use("/gamedata", gameHandlerRoute);
 app.use("/", adminAuthRoute);
 
-//
+//ssl configuration
+const sslServer = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
+  },
+  app
+);
 
 //serve static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -50,17 +58,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //
-app.use(function (req, res, next) {
-  if (req.headers["x-forwarded-proto"] === "https") {
-    res.redirect("http://" + req.hostname + req.url);
-  } else {
-    next();
-  }
-});
-
-//
 port = process.env.PORT || 3005;
 
-app.listen(port, () => {
+sslServer.listen(port, () => {
   console.log("server started at port " + port);
 });
