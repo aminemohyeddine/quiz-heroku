@@ -127,6 +127,7 @@ function App() {
   }, []);
   useEffect(() => {
     updateDimensions();
+    console.log(process.env.NODE_SERVER_URL);
   });
 
   return (
