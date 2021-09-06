@@ -5,9 +5,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const questionsRouter = require("./routes/questions");
 const path = require("path");
-var http = require("http");
-var https = require("https");
-var fs = require("fs");
+const fs = require("fs");
+const https = require("https");
 
 //import Routes
 const authRoute = require("./routes/Auth");
@@ -26,7 +25,6 @@ mongoose.connect(
 );
 
 // middleWears
-app.enable("trust proxy");
 app.use(express.json());
 app.use(cors());
 mongoose.set("useFindAndModify", false);
@@ -47,17 +45,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+port = process.env.PORT || 3005;
 
-//ssl configuration
-const sslServer = https.createServer(
-  {
-    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
-  },
-  app
-);
-port = 3005;
-
-sslServer.listen(port, () => {
+app.listen(port, () => {
   console.log("server started at port " + port);
 });
