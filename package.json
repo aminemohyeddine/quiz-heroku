@@ -26,6 +26,7 @@
     "mongoose": "^5.13.1",
     "node-forge": "^0.10.0",
     "nodemon": "^2.0.9",
+    "socket.io": "^4.2.0",
     "urijs": "^1.19.7"
   }
 }
