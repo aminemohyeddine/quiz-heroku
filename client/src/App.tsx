@@ -17,6 +17,7 @@ import { AddQuestion } from "./components/devPages/addQuestion";
 import { ChangePassword } from "./components/authPages/changePassword";
 import { About } from "./components/gamePages/about page/about";
 import { ContactPage } from "./components/gamePages/contact page/contactPage";
+require("dotenv").config();
 
 function App() {
   const [isCategoryInHomePage, setIsCategoryInHomePage] = useState(false);
@@ -127,7 +128,7 @@ function App() {
   }, []);
   useEffect(() => {
     updateDimensions();
-    console.log(process.env.NODE_SERVER_URL);
+    console.log(process.env.REACT_APP_API_KEY);
   });
 
   return (

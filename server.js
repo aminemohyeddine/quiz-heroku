@@ -39,15 +39,6 @@ app.use("/dev", devRoute);
 app.use("/gamedata", gameHandlerRoute);
 app.use("/", adminAuthRoute);
 
-//ssl configuration
-const sslServer = https.createServer(
-  {
-    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
-  },
-  app
-);
-
 //serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   //set static folder to serve
@@ -57,8 +48,15 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-//
-port = process.env.PORT || 3005;
+//ssl configuration
+const sslServer = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
+  },
+  app
+);
+port = 3005;
 
 sslServer.listen(port, () => {
   console.log("server started at port " + port);
