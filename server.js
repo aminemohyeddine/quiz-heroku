@@ -44,24 +44,17 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
-  portHTTPS = process.env.PORT || 3005;
-  const sslServer = https.createServer(
-    {
-      key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
-      cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
-    },
-    app
-  );
-  //
-  sslServer.listen(portHTTPS, () => {
-    console.log("server started at port " + portHTTPS);
-  });
 }
-//ssl configuration
-//ssl configuration
-
-portHTTP = process.env.PORT || 3004;
-
-app.listen(portHTTP, () => {
-  console.log("server started at port " + portHTTP);
+//ssl config
+portHTTPS = process.env.PORT || 3005;
+const sslServer = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, "ssl", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "ssl", "cert.pem")),
+  },
+  app
+);
+//
+sslServer.listen(portHTTPS, () => {
+  console.log("server started at port " + portHTTPS);
 });
