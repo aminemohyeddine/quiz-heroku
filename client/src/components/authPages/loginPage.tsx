@@ -43,7 +43,7 @@ export const LoginPage: React.FC<Props> = ({
   }, []);
   const authentificationHandler = async (email: string, password: string) => {
     ///user/registerrr
-    const user = await axios.post("http://196.217.181.170:3005/user/login/", {
+    const user = await axios.post("https://196.217.181.170:3005/user/login", {
       email: email,
       password: password,
     });
@@ -63,7 +63,7 @@ export const LoginPage: React.FC<Props> = ({
       history.push("/profile");
     } else if (!user.data.login) {
       const user: any = await axios.post(
-        "http://196.217.181.170:3005/admin/login/",
+        "https://196.217.181.170:3005/admin/login",
         {
           email: email,
           password: password,
