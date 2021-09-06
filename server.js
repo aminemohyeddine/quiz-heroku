@@ -5,7 +5,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const questionsRouter = require("./routes/questions");
 const path = require("path");
-var redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
+var http = require("http");
+var https = require("https");
 
 //import Routes
 const authRoute = require("./routes/Auth");
@@ -24,6 +25,7 @@ mongoose.connect(
 );
 
 // middleWears
+app.enable("trust proxy");
 app.use(express.json());
 app.use(cors());
 mongoose.set("useFindAndModify", false);
@@ -35,7 +37,8 @@ app.use("/posts", postRoute);
 app.use("/dev", devRoute);
 app.use("/gamedata", gameHandlerRoute);
 app.use("/", adminAuthRoute);
-app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
+
+//
 
 //serve static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -45,6 +48,17 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+//
+app.use(function (req, res, next) {
+  if (req.headers["x-forwarded-proto"] === "https") {
+    res.redirect("http://" + req.hostname + req.url);
+  } else {
+    next();
+  }
+});
+
+//
 port = process.env.PORT || 3005;
 
 app.listen(port, () => {
