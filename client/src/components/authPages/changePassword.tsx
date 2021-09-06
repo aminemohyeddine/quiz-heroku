@@ -43,7 +43,7 @@ export const ChangePassword: React.FC<Props> = ({ setUserInfoToFalse }) => {
         newPassword: Yup.string()
           .max(255, "Must be 255 characters or less")
           .required("Required")
-          .min(6, "Must be 6 characters or more"),
+          .min(6, "Must be 8 characters or more"),
         retypeNewPassword: Yup.string()
           .max(255, "Must be 255 characters or less")
           .required("Required")
