@@ -57,6 +57,6 @@ const sslServer = https.createServer(
   app
 );
 
-sslServer.listen(portHTTP, () => {
+app.listen(portHTTP, () => {
   console.log("http server started at port " + portHTTP);
 });
