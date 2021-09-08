@@ -36,7 +36,7 @@ export const QuestionsPage: React.FC<Props> = ({
 
   const getDataFromBackEnd = async () => {
     const allData = await axios.get(
-      `http://localhost:3001/question/get/${questionsfield}`
+      `${process.env.REACT_APP_IP}/question/get/${questionsfield}`
     );
     setDataBackEnd(allData.data);
   };
@@ -57,7 +57,7 @@ export const QuestionsPage: React.FC<Props> = ({
   );
 
   const getUserData = async () => {
-    const data = await axios.post("http://localhost:3001/posts", {
+    const data = await axios.post(`${process.env.REACT_APP_IP}/posts`, {
       token: JWT_TOKEN,
     });
     if (!data.data.firstGame) {
@@ -98,26 +98,32 @@ export const QuestionsPage: React.FC<Props> = ({
     const scoref = score - 1;
     const percentage = (scoref * 100) / data.length;
     const percentageWithTwoDigit = percentage.toFixed(2);
-    const dataa = await axios.post("http://localhost:3001/gamedata/firstgame", {
-      firstName: name,
-      gameScore: scoref,
-      totalOfQuestions: data.length,
-      percOfGame: percentageWithTwoDigit,
-      categoryPlayed: questionsfield,
-    });
+    const dataa = await axios.post(
+      `${process.env.REACT_APP_IP}/gamedata/firstgame`,
+      {
+        firstName: name,
+        gameScore: scoref,
+        totalOfQuestions: data.length,
+        percOfGame: percentageWithTwoDigit,
+        categoryPlayed: questionsfield,
+      }
+    );
   };
 
   const gameHandler = async () => {
     const scoref = score - 1;
     const percentage = (scoref * 100) / data.length;
     const percentageWithTwoDigit = percentage.toFixed(2);
-    const dataa = await axios.post("http://localhost:3001/gamedata/addgame", {
-      firstName: name,
-      gameScore: scoref,
-      totalOfQuestions: data.length,
-      percOfGame: percentageWithTwoDigit,
-      categoryPlayed: questionsfield,
-    });
+    const dataa = await axios.post(
+      `${process.env.REACT_APP_IP}/gamedata/addgame`,
+      {
+        firstName: name,
+        gameScore: scoref,
+        totalOfQuestions: data.length,
+        percOfGame: percentageWithTwoDigit,
+        categoryPlayed: questionsfield,
+      }
+    );
   };
   useEffect(() => {
     if (firstGame) {

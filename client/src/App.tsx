@@ -23,11 +23,10 @@ function App() {
   const [isCategoryInHomePage, setIsCategoryInHomePage] = useState(false);
   const [name, setName] = useState<string>("");
   const [stillAuthorized, setStillAuthorized] = useState<boolean>(false);
-
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
   const [isEditedClass, setIsEditedClass] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
   //navbar
   const [showUserInfo, setShowUserInfo] = useState<boolean>(false);
   const setUserInfoToFalse = () => {
@@ -50,7 +49,7 @@ function App() {
     useState<boolean>(false);
 
   const getAdminData = async () => {
-    const admin = await axios.post("http://localhost:3001/posts/admin", {
+    const admin = await axios.post(`${process.env.REACT_APP_IP}/posts/admin`, {
       token: JWT_TOKEN,
     });
     if (admin.data == "String") {
@@ -62,7 +61,7 @@ function App() {
     }
   };
   const getUserData = async () => {
-    const data = await axios.post("http://localhost:3001/posts", {
+    const data = await axios.post(`${process.env.REACT_APP_IP}/posts`, {
       token: JWT_TOKEN,
     });
 
@@ -104,9 +103,12 @@ function App() {
 
   const checkTheToken = async () => {
     try {
-      const tokenResponse = await axios.post("http://localhost:3001/posts", {
-        token: JWT_TOKEN,
-      });
+      const tokenResponse = await axios.post(
+        `${process.env.REACT_APP_IP}/posts`,
+        {
+          token: JWT_TOKEN,
+        }
+      );
     } catch (e) {
       setIsAuthenticated(false);
       setAdminIsAuthenticated(false);
@@ -119,6 +121,7 @@ function App() {
     checkTheToken();
     getAuthFromLocalS();
     getUserData();
+    console.log(process.env.REACT_APP_IP);
   }, []);
 
   useEffect(() => {
@@ -128,7 +131,6 @@ function App() {
   }, []);
   useEffect(() => {
     updateDimensions();
-    console.log(process.env.REACT_APP_API_KEY);
   });
 
   return (

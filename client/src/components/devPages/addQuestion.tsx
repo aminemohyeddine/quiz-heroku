@@ -23,7 +23,7 @@ export const AddQuestion: React.FC<Props> = ({
   );
   const getAdminData = async () => {
     setLoading(true);
-    const data = await axios.post("http://localhost:3001/posts/admin", {
+    const data = await axios.post(`${process.env.REACT_APP_IP}/posts/admin`, {
       token: JWT_TOKEN,
     });
     if (!data) {
@@ -89,7 +89,7 @@ export const AddQuestion: React.FC<Props> = ({
       ) => {
         if (ResponseThree === "") {
           const questionAdded: any = axios.post(
-            `http://localhost:3001/question/add/${questionsfield}`,
+            `${process.env.REACT_APP_IP}/question/add/${questionsfield}`,
             {
               questionText: textQuestion,
               answerOption: [
@@ -100,7 +100,7 @@ export const AddQuestion: React.FC<Props> = ({
           );
         } else if (ResponseFour === "" && ResponseThree.length > 1) {
           const questionAdded: any = axios.post(
-            `http://localhost:3001/question/add/${questionsfield}`,
+            `${process.env.REACT_APP_IP}/question/add/${questionsfield}`,
             {
               questionText: textQuestion,
               answerOption: [
@@ -115,7 +115,7 @@ export const AddQuestion: React.FC<Props> = ({
           );
         } else {
           const questionAdded: any = axios.post(
-            `http://localhost:3001/question/add/${questionsfield}`,
+            `${process.env.REACT_APP_IP}/question/add/${questionsfield}`,
             {
               questionText: textQuestion,
               answerOption: [

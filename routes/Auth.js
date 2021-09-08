@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
   //check if mail is correct
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.send("email is wrong");
-
+  console.log("email wrong");
   //check if password is correct
   const validPass = await bcrypt.compare(req.body.password, user.password);
   if (!validPass) return res.send("password is wrong");

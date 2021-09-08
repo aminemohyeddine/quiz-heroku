@@ -55,7 +55,7 @@ export const ProfilePage: React.FC<profilePageProps> = ({
     let pythonTimes = 0;
     let javascriptTimes = 0;
 
-    const data: any = await axios.post("http://localhost:3001/posts", {
+    const data: any = await axios.post(`${process.env.REACT_APP_IP}/posts`, {
       token: JWT_TOKEN,
     });
 

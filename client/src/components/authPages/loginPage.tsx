@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import "./LoginPage.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
+require("dotenv").config();
 
 interface Props {
   setUserInfoToFalse: () => void;
@@ -36,14 +37,13 @@ export const LoginPage: React.FC<Props> = ({
     } else {
       return null;
     }
-    console.log();
   };
   useEffect(() => {
     checkIfUserOrAdminIsAuth();
   }, []);
   const authentificationHandler = async (email: string, password: string) => {
     ///user/registerrr
-    const user = await axios.post("http://196.64.60.181:3005/user/login", {
+    const user = await axios.post(`${process.env.REACT_APP_IP}/user/login`, {
       email: email,
       password: password,
     });
@@ -53,17 +53,14 @@ export const LoginPage: React.FC<Props> = ({
       setIsAuthenticated(true);
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("adminAuth", "false");
-      console.log(user.data);
 
       localStorage.setItem("name", user.data.currentUser.firstName);
-      console.log(user.data.currentUser.firstName);
       setName(user.data.currentUser.firstName);
 
-      console.log(localStorage.getItem("isAuthenticated"));
       history.push("/profile");
     } else if (!user.data.login) {
       const user: any = await axios.post(
-        "http://196.64.60.181:3005/admin/login",
+        `${process.env.REACT_APP_IP}/admin/login`,
         {
           email: email,
           password: password,
@@ -74,11 +71,9 @@ export const LoginPage: React.FC<Props> = ({
         localStorage.setItem("isAuthenticated", "false");
 
         localStorage.setItem("name", user.data.currentUser.firstName);
-        console.log(user.data.currentUser.firstName);
 
         localStorage.setItem("userToken", JSON.stringify(user.data.token));
         setAdminIsAuthenticated(true);
-        console.log(localStorage.getItem("adminAuth"));
         history.push("/categoriespage");
       } else {
         setMessage(user.data);
@@ -105,12 +100,7 @@ export const LoginPage: React.FC<Props> = ({
         })}
         onSubmit={(values, { setSubmitting }) => {
           authentificationHandler(values.email, values.password);
-
-          // console.log(
-          //   JSON.stringify(values.email) +
-          //     " " +
-          //     JSON.stringify(values.password)
-          // );
+          console.log(process.env.REACT_APP_IP + "/admin/login");
         }}
       >
         {({ errors, touched }) => (

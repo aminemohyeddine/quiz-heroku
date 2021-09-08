@@ -18,7 +18,7 @@ export const SignUp: React.FC<Props> = ({ setUserInfoToFalse }) => {
     userName: string,
     phoneNumber: string
   ) => {
-    const user = await axios.post("http://localhost:3001/user/register", {
+    const user = await axios.post(`${process.env.REACT_APP_IP}/user/register`, {
       firstName: firstName,
       lastName: lastName,
       email: email,

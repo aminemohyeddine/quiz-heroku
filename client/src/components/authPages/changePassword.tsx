@@ -56,7 +56,7 @@ export const ChangePassword: React.FC<Props> = ({ setUserInfoToFalse }) => {
       ) => {
         if (isAuthenticated) {
           const data: any = await axios.post(
-            "http://localhost:3001/user/changepassword",
+            `${process.env.REACT_APP_IP}/user/changepassword`,
             {
               token: JWT_TOKEN,
               oldPassword: oldPassword,
@@ -71,7 +71,7 @@ export const ChangePassword: React.FC<Props> = ({ setUserInfoToFalse }) => {
           console.log(data);
         } else if (adminIsAuthenticated) {
           const data: any = await axios.post(
-            "http://localhost:3001/admin/changepassword",
+            `${process.env.REACT_APP_IP}/admin/changepassword`,
             {
               token: JWT_TOKEN,
               oldPassword: oldPassword,
